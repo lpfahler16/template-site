@@ -9,9 +9,9 @@ import { Code, Build, Learn, ChevronDown } from "../components/Icons";
 import Content, {
   CodeProjects,
   BuildProjects,
-  LearnProjects,
   NavText,
 } from "../components/content";
+import Footer from "../components/Footer";
 
 const scrollTo2 = () => {
   window.scroll({
@@ -107,7 +107,7 @@ export default function Home() {
           <div className="pb-6 max-w-5xl m-auto animate-appear">
             <h2 className="title-lg py-2">
               <Link className="link before:h-[3px]" href={"/about"}>
-                Hi, I'm Logan
+                Hi, I&apos;m Logan
               </Link>
             </h2>
             <h3 className="subheading-lg py-2 text-lightest-gray">
@@ -151,13 +151,7 @@ export default function Home() {
           <FavoritesSection />
         </section>
         <section className="bg-darkest-gray px-10">
-          <div className="py-6 max-w-5xl m-auto">
-            <h3 className="text-2xl pt-8 text-lightest-gray text-right">
-              Still here? Here's some more links!
-            </h3>
-          </div>
-          <hr className="w-full m-0 p-0 md:rotate-6 inline-block" />
-          <div className="py-40"></div>
+          <Footer />
         </section>
       </main>
     </div>

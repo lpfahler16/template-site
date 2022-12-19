@@ -22,6 +22,7 @@ import {
   SiCplusplus,
   SiPhp,
   SiRuby,
+  SiXcode,
 } from "react-icons/si";
 
 export const Code = FaCode;
@@ -50,3 +51,4 @@ export const Ruby = SiRuby;
 export const Coffeescript = SiCoffeescript;
 export const CPanel = FaCpanel;
 export const Swift = FaSwift;
+export const Xcode = SiXcode;

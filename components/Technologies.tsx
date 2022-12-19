@@ -12,6 +12,7 @@ import {
   Python,
   Ruby,
   Swift,
+  Xcode,
 } from "./Icons";
 
 export interface Technology {
@@ -34,3 +35,4 @@ export const CoffeescriptTech: Technology = {
 };
 export const CPanelTech: Technology = { name: "cPanel", icon: CPanel };
 export const SwiftTech: Technology = { name: "Swift", icon: Swift };
+export const XcodeTech: Technology = { name: "Xcode", icon: Xcode };
