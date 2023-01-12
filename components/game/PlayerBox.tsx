@@ -1,35 +1,47 @@
-import { TimerResult } from "react-timer-hook";
-import { Player } from "../../pages/game";
+import { useEffect, useState } from "react";
+import * as Player from "./player";
+import IPlayer from "./player";
+import { getYoutubeLikeToDisplay } from "./helpers";
+import { GameProps } from "./game";
 
-interface PlayerBoxProps {
+interface PlayerBoxProps extends GameProps {
   className?: string;
-  player: Player;
-  playerClicked: (player: number) => void;
-  index: number; // Player number
+  player: IPlayer;
 }
 
 const PlayerBox: React.FC<PlayerBoxProps> = ({
   className = "",
   player,
-  playerClicked,
-  index,
+  z = 0,
 }): JSX.Element => {
-  const buttonColor = player.timer.isRunning ? "bg-main-red" : "";
+  const buttonColor = ""; // player.timer.isRunning() ? "bg-main-red" : "";
+  const fontClass = Player.active(player) ? "font-bold" : "";
+  const [, setRenderTime] = useState(new Date().getTime());
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setRenderTime(new Date().getTime()), 10);
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
 
   return (
-    <button
-      onClick={() => playerClicked(index)}
-      className={
-        "flex justify-center items-center flex-grow " +
-        className +
-        " " +
-        buttonColor
-      }
+    <div
+      className={[
+        "flex justify-center items-end flex-grow text-center",
+        className,
+        buttonColor,
+        `z-[${z}px]`,
+      ].join(" ")}
     >
-      <p className="text-7xl text-white w-full">
-        {player.timer.minutes}:{player.timer.seconds}
+      <p
+        className={
+          "text-5xl text-white w-full pb-3 transition-all " + fontClass
+        }
+      >
+        {getYoutubeLikeToDisplay(player.timer.getRemainingTime())}
       </p>
-    </button>
+    </div>
   );
 };
 
