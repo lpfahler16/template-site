@@ -118,7 +118,7 @@ const FullStack: React.FC = ({}): JSX.Element => {
   const [renderTime, setRenderTime] = useState(new Date().getTime());
   const [showBox, setShowBox] = useState(1);
   const stopwatch = useStopwatch();
-  const NUM_NEEDED = 1;
+  const NUM_NEEDED = 20;
 
   const props = (num: number) => (num === activeBall ? { active: true } : {});
 
