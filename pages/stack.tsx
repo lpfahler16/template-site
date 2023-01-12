@@ -5,7 +5,7 @@ export default function Stack() {
   return (
     <div>
       <Head>
-        <title>About</title>
+        <title>Stack</title>
         <meta name="description" content="Learn about Logan Pfahler" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
