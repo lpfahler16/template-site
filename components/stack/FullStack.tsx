@@ -58,7 +58,7 @@ const LeaderboardAdd: React.FC<LeaderboardAddProps> = ({
   const [name, setName] = useState("");
   const [submitted, setSubbmitted] = useState(false);
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: any) => {
     event.preventDefault();
     setSubbmitted(true);
     addLeaderboard({ name: name, time: time });
