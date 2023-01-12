@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 export const collections: { leaderboard?: mongoDB.Collection } = {};
 
 export async function connectToDatabase() {
+  console.log("Connecting to db...");
   dotenv.config();
 
   const client: mongoDB.MongoClient = new mongoDB.MongoClient(
@@ -11,6 +12,7 @@ export async function connectToDatabase() {
   );
 
   await client.connect();
+  console.log("Connected to client");
 
   const db: mongoDB.Db = client.db(process.env.DB_NAME);
 
