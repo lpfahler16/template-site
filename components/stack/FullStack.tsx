@@ -86,6 +86,7 @@ const LeaderboardAdd: React.FC<LeaderboardAddProps> = ({
 
 const Leaderboard = () => {
   const [data, setData] = useState<LeaderboardPlace[]>([]);
+  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -96,10 +97,12 @@ const Leaderboard = () => {
       })
       .catch((err) => {
         setIsLoading(false);
+        setError(true);
       });
   }, []);
 
   if (isLoading) return <>Loading...</>;
+  if (error) return <></>;
   if (data) {
     return (
       <div>
