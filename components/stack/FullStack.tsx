@@ -114,7 +114,7 @@ const FullStack: React.FC = ({}): JSX.Element => {
       <Ball {...props(4)} />
       <Ball {...props(3)} />
       <Ball {...props(2)} />
-      <Ball {...props(1)} className="mr-40" />
+      <Ball {...props(1)} className="mr-40 mt-20" />
       <Ball {...props(0)} className="ml-10" disc />
     </div>
   );
