@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 export const collections: { leaderboard?: mongoDB.Collection } = {};
 
 export async function connectToDatabase() {
-  console.log("Connecting to db...");
+  console.log("Connecting to db...", process.env.DB_CONN_STRING);
   dotenv.config();
 
   const client: mongoDB.MongoClient = new mongoDB.MongoClient(
