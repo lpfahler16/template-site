@@ -62,6 +62,7 @@ const LeaderboardAdd: React.FC<LeaderboardAddProps> = ({
 
   const onSubmit = (event: any) => {
     event.preventDefault();
+    if (name.length < 1) return;
     setSubbmitted(true);
     addLeaderboard({ name: name, time: time });
   };
@@ -188,7 +189,9 @@ const FullStack: React.FC = ({}): JSX.Element => {
               <p className="font-bold pb-4">Add to leaderboard</p>
               <LeaderboardAdd time={stopwatch.getElapsedRunningTime()} />
             </div>
-            <Leaderboard />
+            <div className="max-h-48 overflow-scroll">
+              <Leaderboard />
+            </div>
           </div>
         </div>
       )}
