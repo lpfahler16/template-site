@@ -86,23 +86,16 @@ const LeaderboardAdd: React.FC<LeaderboardAddProps> = ({
 
 const Leaderboard = () => {
   const [data, setData] = useState<LeaderboardPlace[]>([]);
-  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    showLeaderboard(20)
-      .then((res) => {
-        setData(res);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        setError(true);
-      });
+    showLeaderboard(20).then((res) => {
+      setData(res);
+      setIsLoading(false);
+    });
   }, []);
 
   if (isLoading) return <>Loading...</>;
-  if (error) return <></>;
   if (data) {
     return (
       <div>
@@ -133,13 +126,11 @@ const FullStack: React.FC = ({}): JSX.Element => {
   });
 
   useEffect(() => {
-    console.log("Re-renderd");
     const pickRandom = () => {
       var number = Math.floor(Math.random() * 7);
       while (number === activeBall) {
         number = Math.floor(Math.random() * 7);
       }
-      console.log("Random: ", number);
       setActiveBall(number);
     };
 
@@ -152,10 +143,7 @@ const FullStack: React.FC = ({}): JSX.Element => {
     const keyPressed = (event: KeyboardEvent) => {
       setShowBox(0);
       const ball = parseInt(event.key);
-      console.log("Pressed: ", ball);
-      console.log("Active: ", activeBall);
       if (ball === activeBall) {
-        console.log("Correct!");
         setNumCorrect(numCorrect + 1);
         pickRandom();
       } else {

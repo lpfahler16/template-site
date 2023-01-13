@@ -9,15 +9,7 @@ const handler: Handler = async (
   event: HandlerEvent,
   context: HandlerContext
 ) => {
-  try {
-    await connectToDatabase();
-  } catch {
-    console.log("Failed to connect");
-    return {
-      statusCode: 200,
-      body: JSON.stringify([]),
-    };
-  }
+  await connectToDatabase();
 
   if (event.body && collections.leaderboard) {
     const newPlace = JSON.parse(event.body) as LeaderboardPlace;

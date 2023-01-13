@@ -1,5 +1,4 @@
 import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
-import { LeaderboardPlace } from "../../components/stack/leaderboard";
 import {
   collections,
   connectToDatabase,
@@ -9,15 +8,7 @@ const handler: Handler = async (
   event: HandlerEvent,
   context: HandlerContext
 ) => {
-  try {
-    await connectToDatabase();
-  } catch {
-    console.log("Failed to connect");
-    return {
-      statusCode: 200,
-      body: JSON.stringify([]),
-    };
-  }
+  await connectToDatabase();
 
   if (event.body && collections.leaderboard) {
     const result = await collections.leaderboard
