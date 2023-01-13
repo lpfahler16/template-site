@@ -11,12 +11,7 @@ export async function connectToDatabase() {
     process.env.DB_CONN_STRING as string
   );
 
-  try {
-    await client.connect();
-  } catch {
-    console.log("Failed to connect");
-    return [];
-  }
+  await client.connect();
 
   console.log("Connected to client");
 
