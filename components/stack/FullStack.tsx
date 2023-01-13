@@ -5,6 +5,8 @@ import {
   LeaderboardPlace,
   showLeaderboard,
 } from "./leaderboard";
+import { MdLeaderboard } from "react-icons/md";
+import Link from "next/link";
 
 interface BallProps {
   active?: boolean;
@@ -39,7 +41,7 @@ const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
   num,
 }): JSX.Element => {
   return (
-    <div className="border-medium-gray border-t-2 p-3 flex justify-between">
+    <div className="border-medium-gray border-t-2 p-3 flex justify-between text-lightest-gray">
       <div>
         {num}. {place.name}
       </div>
@@ -84,7 +86,7 @@ const LeaderboardAdd: React.FC<LeaderboardAddProps> = ({
   return res;
 };
 
-const Leaderboard = () => {
+export const Leaderboard = () => {
   const [data, setData] = useState<LeaderboardPlace[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -166,7 +168,7 @@ const FullStack: React.FC = ({}): JSX.Element => {
   }, [activeBall, numCorrect]);
 
   return (
-    <div className="flex flex-col items-center gap-10 mt-10 relative">
+    <div className="flex flex-col items-center gap-10 pt-10 relative min-h-screen">
       {showBox === 1 && (
         <div className="fixed m-auto w-1/2 mt-[5vh] bg-dark-gray rounded-md shadow-lg shadow-black text-center p-5 text-lightest-gray">
           <p>Type the number corresponding to the player in the stack.</p>
@@ -196,6 +198,9 @@ const FullStack: React.FC = ({}): JSX.Element => {
       <div className="absolute top-4 right-4 text-xl text-lightest-gray">
         {"Correct: " + numCorrect}
       </div>
+      <Link href={"/leaderboard"}>
+        <MdLeaderboard className="absolute bottom-4 right-4 text-lightest-gray text-5xl" />
+      </Link>
       <Ball {...props(6)} />
       <Ball {...props(5)} />
       <Ball {...props(4)} />
