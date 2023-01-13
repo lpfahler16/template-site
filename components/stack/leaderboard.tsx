@@ -12,6 +12,7 @@ export const addLeaderboard = (place: LeaderboardPlace) => {
 };
 
 export const showLeaderboard = (len: number): Promise<LeaderboardPlace[]> => {
+  console.log("Showing");
   return fetch(`.netlify/functions/show`, {
     method: "PUT",
     body: JSON.stringify({ limit: len }),

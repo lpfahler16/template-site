@@ -11,7 +11,13 @@ export async function connectToDatabase() {
     process.env.DB_CONN_STRING as string
   );
 
-  await client.connect();
+  try {
+    await client.connect();
+  } catch {
+    console.log("Failed to connect");
+    return [];
+  }
+
   console.log("Connected to client");
 
   const db: mongoDB.Db = client.db(process.env.DB_NAME);
