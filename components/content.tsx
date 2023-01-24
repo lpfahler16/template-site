@@ -40,7 +40,7 @@ const Content = {
       dashboard: {
         title: "Dashboard",
         shortDesc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          'I used the open source dashboard library "Smashing" along with CoffeeScript, Ruby, HTML, SCSS, and Python to create a dashboard for my college apartment. It fetches and displays information from Google Calendar, Discord, news, weather, and more. This runs off of a Raaspberry Pi that displays to a TV in our living room',
         longDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         technologies: [
@@ -63,7 +63,7 @@ const Content = {
       ledLamp: {
         title: "LEDLamp",
         shortDesc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "I coded an extendable C++ library to interact with the Arduino and sensors / lights in a lamp that I built. The lamp is made up of LED lights, a switch, a potentiometer, and an Arduin. The library is documented with comments / examples to allow others to write custom programs for the lamp",
         longDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         technologies: [CPlusPlusTech, GithubTech],
@@ -92,7 +92,16 @@ const Content = {
         technologies: [SwiftTech, XcodeTech],
       },
     },
-    build: {},
+    build: {
+      salmonLadder: {
+        title: "Salmon Ladder",
+        shortDesc:
+          'I built the American Ninja Warrior obstacle "The Salmon Ladder" in my backyard. I designed it in Fusion360 and analyzed the design using mechanical principles. The structure is over 10 feet tall and fully functional for its designed purpose.',
+        longDesc:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        technologies: [],
+      },
+    },
   },
 };
 

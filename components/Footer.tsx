@@ -26,7 +26,7 @@ const Footer: React.FC = (): JSX.Element => {
             <LinkedIn />
           </a>
           <a
-            href="https://www.linkedin.com/in/logan-pfahler/"
+            href="https://github.com/lpfahler16"
             className="text-main-red"
             target="_blank"
             rel="noreferrer"
@@ -34,7 +34,7 @@ const Footer: React.FC = (): JSX.Element => {
             <Github />
           </a>
           <a
-            href="https://www.linkedin.com/in/logan-pfahler/"
+            href="https://drive.google.com/file/d/1I2NRx8-s0PBtxhiT8HE0nnfGmoPxd_nS/view?usp=sharing"
             className="text-main-red"
             target="_blank"
             rel="noreferrer"

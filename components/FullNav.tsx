@@ -48,7 +48,7 @@ export const Nav: React.FC = (): JSX.Element => {
   const transition = open ? "" : "translate-x-[calc(100%-40px)]";
   const hideNav = open ? "" : "invisible";
   return (
-    <div className={"flex items-center transition " + transition}>
+    <div className={"md:flex hidden items-center transition " + transition}>
       <div
         className="text-lightest-gray p-4 cursor-pointer"
         onClick={() => setOpen(!open)}
@@ -61,10 +61,10 @@ export const Nav: React.FC = (): JSX.Element => {
       </div>
       {true && (
         <span className={"flex items-center " + hideNav}>
-          <NavIcon text={NavText.aboutMe} link={"/about"} Icon={Profile} />
-          <NavIcon text={NavText.code} link={"/coding"} Icon={Code} />
-          <NavIcon text={NavText.build} link={"/building"} Icon={Build} />
-          <NavIcon text={NavText.learn} link={"/learning"} Icon={Learn} />
+          <NavIcon text={NavText.aboutMe} link={"/soon"} Icon={Profile} />
+          <NavIcon text={NavText.code} link={"/soon"} Icon={Code} />
+          <NavIcon text={NavText.build} link={"/soon"} Icon={Build} />
+          <NavIcon text={NavText.learn} link={"/soon"} Icon={Learn} />
           <div className="border-l-[2px] mx-4 border-lightest-gray h-10"></div>
           <NavIcon
             text={NavText.gitHub}
@@ -78,7 +78,14 @@ export const Nav: React.FC = (): JSX.Element => {
             blank
             Icon={LinkedIn}
           />
-          <NavIcon text={NavText.resume} link={""} Icon={Resume} />
+          <NavIcon
+            text={NavText.resume}
+            link={
+              "https://drive.google.com/file/d/1I2NRx8-s0PBtxhiT8HE0nnfGmoPxd_nS/view?usp=sharing"
+            }
+            blank
+            Icon={Resume}
+          />
         </span>
       )}
     </div>

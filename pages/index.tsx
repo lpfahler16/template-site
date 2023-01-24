@@ -33,19 +33,19 @@ const FavoriteProject: React.FC<FavoriteProjectProps> = ({
   title,
   desc,
   link,
-}): JSX.Element => {
-  return (
-    <div key={key} className="py-10 px-4">
-      <h3 className="text-2xl text-lightest-gray pb-6 font-bold">{title}</h3>
-      <p className="text-lg py-2 text-lightest-gray">{desc}</p>
+}): JSX.Element => (
+  <div key={key} className="py-10 px-4 md:px-8">
+    <h3 className="text-2xl text-lightest-gray pb-6 font-bold">{title}</h3>
+    <p className="text-lg py-2 text-lightest-gray">{desc}</p>
+    {link && (
       <div className="w-full text-right">
         <Link className="text-lg py-2 link text-right" href={link}>
           Learn more
         </Link>
       </div>
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 const FavoritesSection: React.FC = (): JSX.Element => {
   const [selected, setSelected] = useState(0);
@@ -56,22 +56,23 @@ const FavoritesSection: React.FC = (): JSX.Element => {
         key={0}
         title={CodeProjects.dashboard.title}
         desc={CodeProjects.dashboard.shortDesc}
-        link={"/projects/dashboard"}
-      />,
-      <FavoriteProject
-        key={1}
-        title={CodeProjects.wordle.title}
-        desc={CodeProjects.wordle.shortDesc}
         link={""}
       />,
       <FavoriteProject
-        key={2}
+        key={0}
         title={CodeProjects.ledLamp.title}
         desc={CodeProjects.ledLamp.shortDesc}
         link={""}
       />,
     ],
-    [],
+    [
+      <FavoriteProject
+        key={0}
+        title={BuildProjects.salmonLadder.title}
+        desc={BuildProjects.salmonLadder.shortDesc}
+        link={""}
+      />,
+    ],
   ];
 
   return (
@@ -106,7 +107,7 @@ export default function Home() {
           <Nav />
           <div className="pb-6 max-w-5xl m-auto animate-appear">
             <h2 className="title-lg py-2">
-              <Link className="link before:h-[3px]" href={"/about"}>
+              <Link className="link before:h-[3px]" href={"/soon"}>
                 Hi, I&apos;m Logan
               </Link>
             </h2>
@@ -117,23 +118,31 @@ export default function Home() {
           <hr className="w-full md:-rotate-6 md:animate-slight-rotate m-auto" />
           <div className="pt-6 max-w-5xl m-auto">
             <h3 className="subheading-lg text-lightest-gray text-right py-2 animate-appear">
-              Check out my <a className="link">resume</a>
+              Check out my{" "}
+              <a
+                className="link"
+                target="_blank"
+                href="https://drive.google.com/file/d/1I2NRx8-s0PBtxhiT8HE0nnfGmoPxd_nS/view?usp=sharing"
+                rel="noreferrer"
+              >
+                resume
+              </a>
             </h3>
           </div>
           <div className="pt-20 pb-10 flex flex-wrap gap-x-20 gap-y-10 animate-appear">
-            <Card link={"/coding"}>
+            <Card link={"/soon"}>
               <Code className="inline-block text-medium-gray text-9xl group-hover:scale-110 transition" />
               <p className="heading-md text-lightest-gray pt-8 group-hover:text-main-red transition">
                 {NavText.code}
               </p>
             </Card>
-            <Card link={"/building"}>
+            <Card link={"/soon"}>
               <Build className="inline-block text-medium-gray text-9xl group-hover:scale-110 transition" />
               <p className="heading-md text-lightest-gray pt-8 group-hover:text-main-red transition">
                 {NavText.build}
               </p>
             </Card>
-            <Card link={"/learning"}>
+            <Card link={"/soon"}>
               <Learn className="inline-block text-medium-gray text-9xl group-hover:scale-110 transition" />
               <p className="heading-md text-lightest-gray pt-8 group-hover:text-main-red transition">
                 {NavText.learn}
