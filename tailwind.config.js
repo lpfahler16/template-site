@@ -18,19 +18,8 @@ module.exports = {
         'lightest-gray': '#EDEDED'
       },
       animation: {
-        'slight-rotate': 'slight-rotation 2s ease-out',
-        'appear': 'in-left 1s ease-out',
       },
       keyframes: {
-        'slight-rotation': {
-          '0%': { transform: 'rotate(0deg)', width:'0%' },
-          '50%': { transform: 'rotate(0deg)', width:'100%' },
-          '100%': { transform: 'rotate(-6deg)', width:'100%' }
-        },
-        'in-left': {
-          '0%': { transform: 'translateX(-10px)', opacity:'0%' },
-          '100%': { transform: 'translateX(0px)', opacity:'100%' },
-        }
       }
     },
   },

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-export default function Home() {
+export default function Page2() {
   return (
     <div>
       <Head>
@@ -11,9 +11,9 @@ export default function Home() {
       </Head>
 
       <main className="bg-darkest-gray min-h-screen overflow-hidden flex flex-col justify-center items-center">
-        <p className="text-lightest-gray">Here is the template</p>
-        <Link href={"/page2"} className="text-main-red">
-          Here is a second page
+        <p className="text-lightest-gray">Here is page 2</p>
+        <Link href={"/"} className="text-main-red">
+          Here is page 1
         </Link>
       </main>
     </div>
