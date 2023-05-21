@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "go": "next build; next start"
   },
   "dependencies": {
     "@netlify/functions": "^1.4.0",
