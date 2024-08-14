@@ -45,3 +45,9 @@ git remote add upstream https://github.com/lpfahler16/template-site
 git push origin main
 git push --all
 ```
+
+## Running Repo
+```
+npm install
+npm run go
+```
