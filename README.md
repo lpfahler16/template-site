@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 git clone https://github.com/lpfahler16/template-site New_Repo
 cd New_Repo
 git remote set-url origin https://github.com/lpfahler16/New_Repo
-git remote add upstream https://github.com/lpfahler16/Repo
+git remote add upstream https://github.com/lpfahler16/template-site
 git push origin master
 git push --all
 ```
